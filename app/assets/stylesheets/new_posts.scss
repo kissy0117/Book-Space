@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'  
+  }
+
+.newPost{
+  
+  width: 100%;
+  align-items: center;
+  display: flex;
+  .form{
+    width: 75%;
+    margin: 20px auto;
+    text-align: center;
+    .searchForm{
+      padding-bottom: 30px;
+    }
+  }
+  .search-input{
+    display: inline-block;
+    width: 50%;
+  }
+  .search-btn{
+    display: inline-block;
+    background-color: #6495ed;
+    color: white;
+    padding: 0px 10px;
+    vertical-align: top;
+  }
+  .jsonData{
+    background-color: whitesmoke;
+    &__image{
+      &__index{
+        height: 50px;
+        width: 70%;
+        margin: 0 auto;
+        background: #6495ed;
+
+        label{
+          cursor: pointer;
+          font-size:1.5em;
+        }
+
+      }
+      .bookImage{
+        display: none;
+      }
+    }
+    &__title{
+      &__index{
+        
+      }
+      
+    }
+    &__author{
+      &__index{
+
+      }
+    }
+    &__info{
+      &__index{
+
+      }
+    }
+    &__hypothesis{
+      &__index{
+
+      }
+      .bookText{
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        color: #222;
+        font-size: 16px;
+        margin: 0;
+        outline: none;
+        padding: 13px 16px;
+        resize: vertical;
+        vertical-align: middle;
+        width: 70%;
+      }
+    }
+    .bookTitle,.bookAuthor,.bookInfo{
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: inherit;
+      height: 48px;
+      margin: 0;
+      outline: none;
+      padding: 0 16px;
+      width: 70%;
+    }
+    .submitBtn{
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 73px;
+      text-decoration: none;
+      color: #67c5ff;
+      border: solid 2px #67c5ff;
+      border-radius: 3px;
+      transition: .4s;
+      &:hover {
+        background: #67c5ff;
+        color: white;
+      }
+    }
+    .jsonData__link{
+      margin-top: 10px;
+      a {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: #67c5ff;
+      }
+      a::after {
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #67c5ff;
+        transform: scale(0, 1);
+        transform-origin: left top;
+        transition: transform .3s;
+      }
+      a:hover::after {
+        transform: scale(1, 1);
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.wrapperFour
+  .containerCategory
+    %h2.containerCategory__title
+      書籍一覧
+    .containerCategory__books
+      .containerCategory__books--list
+        - @posts.each do |post|
+          %figure.containerCategory__books--list__image
+            = link_to post_path(post.user_id), class: "show-book" do
+              = image_tag post.image.url, alt: "image_url",size: "200x150", class:"new-image"
+            .containerCategory__book--list__image__body
+              %h3.book--name
+                TITLE:
+                = post.title
+              .containerCategory__book--list__image__body__details
+                %ul.details__menu
+                  %li
+                    AUTHOR:
+                    = post.author
+                  %li ★

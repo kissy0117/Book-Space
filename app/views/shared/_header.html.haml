@@ -1,0 +1,22 @@
+.header
+  .header__menu
+    - if user_signed_in?
+      %ul.lists
+        %li
+          = link_to user_path(current_user), class: "login-btn" do
+            = current_user.name
+            = image_tag current_user.image.url, class: 'user-icon'
+        %li
+          =link_to destroy_user_session_path, method: :delete, class: "delete-btn" do
+            = "ログアウト"
+      .searchBooks
+        = link_to new_post_path, class: "search-btn" do
+          = "本を選ぶ"
+    -else
+      %ul.lists
+        %li
+          = link_to new_user_session_path, class: "login-btn" do
+            = "ログイン"
+        %li
+          = link_to new_user_registration_path, class: "newUser-btn" do
+            = "新規登録"

@@ -1,0 +1,33 @@
+- @posts.each do |post|
+  .containerBooks
+    .containerBooks__left
+      .containerBooks__left__image
+        = image_tag post.image.url, alt: '本の写真', height: '100%', width: '100%', class: 'book-image'
+    .containerBooks__right
+      .containerBooks__right__contents
+        %h2.title
+          = post.title
+        %p.author
+          = post.author
+        %p.info
+          = post.infomation
+        %p.review
+          = post.content
+      .containerBooks__right__picker
+        .containerBooks__right__picker-image
+          = image_tag post.user.image.url, alt: '顔写真', height: '100px', width: '100px', class: 'picker-image'
+        .containerBooks__right__picker-profile
+          %p From: JAPAN
+          %p
+            Name:
+            = post.user.name
+      - if user_signed_in? && current_user.id == post.user_id
+        .containerBooks__right__picker-link-menu
+          = link_to edit_post_path(post.id), class: "edit-post" do
+            = "Edit"
+          = link_to post_path(post.id), method: :delete, class: "delete-post" do
+            = "Delete"
+      - else
+        .containerBooks__right__picker-link
+          = link_to "#", class: "buy-books" do
+            = "Buy a book"
