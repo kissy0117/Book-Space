@@ -8,82 +8,96 @@ head,body{
 }
 
 .header{
-  
-
+  border-bottom: solid 1px #00BCD4;
   &__menu{
-    
-    .lists{
-      li{
-        
-      }
-      display: flex;
-      float: right;
-      padding-right: 30px;
-      .login-btn,.newUser-btn{
-        position: relative;
-        display: inline-block;
-        font-weight: bold;
-        padding: 0.25em 0.5em;
-        text-decoration: none;
-        color: #00BCD4;
-        background: #ECECEC;
-        transition: .4s;
-        margin-right: 10px;
-        &:hover{
-          background: #00bcd4;
-          color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    &__left{
+      margin-top: 13px;
+      &-icon{
+        font-size: 25px;
+        .icon-btn{
+          color: black;
         }
-      }
-      .user-icon{
-        width: 50px;
-        height: 50px;
-        border-radius: 100px;
-        object-fit: cover;
-      }
-      .delete-btn{
-        
-        position: relative;
-        display: inline-block;
-        font-weight: bold;
-        padding: 20px 10px;
-        text-decoration: none;
-        color: #00BCD4;
-        background: #ECECEC;
-        transition: .4s;
-        &:hover{
-          background: #00bcd4;
-          color: white;
-        }
-
       }
     }
-    .searchLink{
-      text-align: center;
-
-      .search-btn {
-        display: table-cell;
-        vertical-align: middle;
-        position: relative;
-        display: inline-block;
-        font-weight: bold;
-        padding: 0.25em 0;
+    &__center{
+      .search-btn{
         text-decoration: none;
-        color: #67c5ff;
-        &:before {
-          position: absolute;
-          content: '';
-          width: 100%;
-          height: 4px;
-          top:100%;
-          left: 0;
-          border-radius: 3px;
-          background:#67c5ff;
-          transition: .2s;
+        font-weight: bold;
+        font-size: 37px;
+        color: #799dec;
+        text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px #6182ca, 0px 2px 0px #4f6aa7, 0px 3px 0px #5470ad;
+        &.search-btn:active {
+          top: 4px;
+          text-shadow: none;
         }
-        &:hover:before {
-          top: -webkit-calc(100% - 3px);
-          top: calc(100% - 3px);
+      }
+    }
+    &__right{
+      &-signedIn{
+        .lists{
+          display: flex;
+          .login-btn{
+            position: relative;
+            display: inline-block;
+            font-weight: bold;
+            padding: 0.25em 0.5em;
+            text-decoration: none;
+            color: #00BCD4;
+            background: #ECECEC;
+            transition: .4s;
+            margin-right: 10px;
+            &:hover{
+              background: #00bcd4;
+              color: white;
+            }
+          }
+          .user-icon{
+            width: 50px;
+            height: 50px;
+            border-radius: 100px;
+            object-fit: cover;
+          }
+          .delete-btn{
+            position: relative;
+            display: inline-block;
+            font-weight: bold;
+            padding: 20px 10px;
+            text-decoration: none;
+            color: #00BCD4;
+            background: #ECECEC;
+            transition: .4s;
+            &:hover{
+              background: #00bcd4;
+              color: white;
+            }
+          }
+        
         }
+      }
+    }
+    &__right-newUser{
+      .lists{
+        display: flex;
+        margin-top: 8px;
+        .login-btn,.newUser-btn{
+          position: relative;
+          display: inline-block;
+          font-weight: bold;
+          padding: 0.25em 0.5em;
+          text-decoration: none;
+          color: #00BCD4;
+          background: #ECECEC;
+          transition: .4s;
+          margin-right: 10px;
+          &:hover{
+            background: #00bcd4;
+            color: white;
+          }
+        }
+
       }
     }
   }
