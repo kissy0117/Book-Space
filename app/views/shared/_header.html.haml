@@ -1,9 +1,12 @@
 .header
   .header__menu
     .header__menu__left
-      .header__menu__left-icon
+      .header__menu__left-iconOne
         = link_to root_path, class: "icon-btn" do
           %i.fas.fa-bars
+      .header__menu__left-iconTwo
+        = link_to posts_path, class: "posts-index" do
+          %i.far.fa-address-card
     - if user_signed_in?
       .header__menu__center
         %li

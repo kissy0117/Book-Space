@@ -1,3 +1,4 @@
+= render 'shared/header'
 - @posts.each do |post|
   .containerBooks
     .containerBooks__left
@@ -8,10 +9,13 @@
         %h2.title
           = post.title
         %p.author
+          Author:
           = post.author
         %p.info
+          Infomation:
           = post.infomation
         %p.review
+          Review:
           = post.content
       .containerBooks__right__picker
         .containerBooks__right__picker-image
@@ -21,13 +25,17 @@
           %p
             Name:
             = post.user.name
-      - if user_signed_in? && current_user.id == post.user_id
-        .containerBooks__right__picker-link-menu
-          = link_to edit_post_path(post.id), class: "edit-post" do
-            = "Edit"
-          = link_to post_path(post.id), method: :delete, class: "delete-post" do
-            = "Delete"
-      - else
-        .containerBooks__right__picker-link
-          = link_to "#", class: "buy-books" do
-            = "Buy a book"
+        - if user_signed_in? && current_user.id == post.user_id
+          .containerBooks__right__picker-userMenu
+            %li
+              = link_to edit_post_path(post.id), class: "edit-post" do
+                = "Edit"
+            %li
+              = link_to post_path(post.id), method: :delete, class: "delete-post" do
+                = "Delete"
+        - else
+          .containerBooks__right__picker-newUserMenu
+            = link_to "#", class: "buy-books" do
+              = "Buy a book"
+= render "shared/footer"
+

@@ -14,12 +14,21 @@ head,body{
     justify-content: space-between;
     padding: 0 30px;
     &__left{
+      display: flex;
       margin-top: 13px;
-      &-icon{
+      &-iconOne{
         font-size: 25px;
+        padding-right: 10px;
         .icon-btn{
           color: black;
         }
+      }
+      &-iconTwo{
+        font-size: 25px;
+        .posts-index{
+          color: black;
+        }
+
       }
     }
     &__center{
