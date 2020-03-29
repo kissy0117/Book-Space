@@ -65,8 +65,27 @@ body,head{
       &-profile{
         padding: 40px 10px;
       }
-      &-link{
-        margin: 0 auto;
+      &-userMenu{
+        display: flex;
+        li{
+          padding-left: 10px;
+        }
+        .edit-post,.delete-post{
+          display: inline-block;
+          font-size: 20px;
+          padding: 10px 20px;
+          text-decoration: none;
+          color: #67c5ff;
+          border: solid 2px #67c5ff;
+          border-radius: 3px;
+          transition: .4s;
+          &:hover{
+            background: #67c5ff;
+            color: white;
+          }
+        }
+      }
+      &-newUserMenu{
         .buy-books{
           display: inline-block;
           font-size: 20px;

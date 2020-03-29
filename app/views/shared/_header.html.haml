@@ -1,22 +1,32 @@
 .header
   .header__menu
+    .header__menu__left
+      .header__menu__left-iconOne
+        = link_to root_path, class: "icon-btn" do
+          %i.fas.fa-bars
+      .header__menu__left-iconTwo
+        = link_to posts_path, class: "posts-index" do
+          %i.far.fa-address-card
     - if user_signed_in?
-      %ul.lists
+      .header__menu__center
         %li
-          = link_to user_path(current_user), class: "login-btn" do
-            = current_user.name
-            = image_tag current_user.image.url, class: 'user-icon'
-        %li
-          =link_to destroy_user_session_path, method: :delete, class: "delete-btn" do
-            = "ログアウト"
-      .searchBooks
-        = link_to new_post_path, class: "search-btn" do
-          = "本を選ぶ"
+          = link_to new_post_path, class: "search-btn" do
+            = "Choose a book"
+      .header__menu__right-signedIn
+        %ul.lists
+          %li
+            = link_to user_path(current_user), class: "login-btn" do
+              = current_user.name
+              = image_tag current_user.image.url, class: 'user-icon'
+          %li
+            =link_to destroy_user_session_path, method: :delete, class: "delete-btn" do
+              = "ログアウト"
     -else
-      %ul.lists
-        %li
-          = link_to new_user_session_path, class: "login-btn" do
-            = "ログイン"
-        %li
-          = link_to new_user_registration_path, class: "newUser-btn" do
-            = "新規登録"
+      .header__menu__right-newUser
+        %ul.lists
+          %li
+            = link_to new_user_session_path, class: "login-btn" do
+              = "ログイン"
+          %li
+            = link_to new_user_registration_path, class: "newUser-btn" do
+              = "新規登録"
