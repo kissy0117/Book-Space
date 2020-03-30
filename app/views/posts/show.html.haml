@@ -1,1 +1,46 @@
-akakaakak
+= render "shared/header"
+.postHead
+  %ul.postHead__lists
+    %li.postHead__lists__listOne
+      = link_to root_path, class: "postHead__lists__listOne--link" do
+        IRM
+    %li.postHead__lists__listTwo
+      .postHead__lists__listTwo--individual-product
+        = @post.title
+.postBox
+  .postBox__inner
+    .postBox__inner__detail
+      .postBox__inner__detail--title
+        = @post.title
+      .postBox__inner__detail--image
+        = image_tag @post.image.url, class: "detail-image"
+      .postBox__inner__detail--table
+        %table
+          %tbody
+            %tr
+              %th
+                投稿者
+              %td
+                = @post.user.name
+            %tr
+              %th
+                本のタイトル
+              %td
+                = @post.title
+            %tr
+              %th
+                本の著者
+              %td
+                = @post.author
+            %tr
+              %th
+                本の情報
+              %td
+                = @post.infomation
+            %tr
+              %th
+                投稿日時
+              %td
+                = @post.created_at
+= render "shared/contentsSix"
+= render "shared/footer"
