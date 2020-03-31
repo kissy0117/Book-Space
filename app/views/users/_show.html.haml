@@ -3,7 +3,8 @@
   .containerBooks
     .containerBooks__left
       .containerBooks__left__image
-        = image_tag post.image.url, alt: '本の写真', height: '100%', width: '100%', class: 'book-image'
+        = link_to post_path(post.id), class: "#" do
+          = image_tag post.image.url, alt: '本の写真', height: '100%', width: '100%', class: 'book-image'
     .containerBooks__right
       .containerBooks__right__contents
         %h2.title
@@ -37,5 +38,6 @@
           .containerBooks__right__picker-newUserMenu
             = link_to "#", class: "buy-books" do
               = "Buy a book"
+= render "shared/contentsSix"
 = render "shared/footer"
 
