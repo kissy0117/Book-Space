@@ -34,4 +34,33 @@ li{
       }
     }
   }
+  &__links{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    a{
+      display: block;
+      margin: 0 5px 5px 0;
+      padding: 0;
+      font-size: large;
+    }
+    i{
+      width: 50px;
+      height: 50px;
+      margin: 0;
+      border-radius: 50%;
+      background: white;
+      line-height: 50px;
+      text-align: center;
+    }
+    .twitter-link{
+      color: #00aced;
+    }
+    .facebook-link{
+      color: #305097;
+    }
+    .instagram-link{
+      color: #3f729b;
+    }
+  }
 }

@@ -38,6 +38,7 @@
           .containerBooks__right__picker-newUserMenu
             = link_to "#", class: "buy-books" do
               = "Buy a book"
+= paginate(@posts)
 = render "shared/contentsSix"
 = render "shared/footer"
 
