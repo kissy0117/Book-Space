@@ -51,23 +51,27 @@ body {
     }
     &__title{
       &__index{
-        
+        text-align: start;
+        padding-left: 150px;
       }
       
     }
     &__author{
       &__index{
-
+        text-align: start;
+        padding-left: 150px;
       }
     }
     &__info{
       &__index{
-
+        text-align: start;
+        padding-left: 150px;
       }
     }
     &__hypothesis{
       &__index{
-
+        text-align: start;
+        padding-left: 150px;
       }
       .bookText{
         border: 1px solid #ccc;

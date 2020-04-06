@@ -3,36 +3,40 @@
   .form
     .searchForm
       %input.searchBooks{ type: "search", placeholder: "Favorite books", class: "search-input", id: "title"}
-
+      %input.searchBooks{ type: "search", placeholder: "Favorite books", class: "search-input", id: "author"}
       %input.sendBtn{ type: "submit", value: "検索", class: "search-btn", id: "searchBtn"}
 
     = form_with model: @post, local: true do |f|
-      .jsonData#sampleID
-        -# .jsonData__image
-        -#   .jsonData__image__index
+      .jsonData
+        .jsonData__image#sampleID
+          .jsonData__image__index
         -#     %label.BookImage
         -#       %li.fas.fa-camera
         -#         = f.file_field :image, class: "bookImage"
 
-        -# .jsonData__title
-        -#   .jsonData__title__index
-        -#     = f.label :BookTitle, "本のタイトル"
-        -#   = f.text_field :title, class: "bookTitle"
+        .jsonData__title
+          .jsonData__title__index
+            %i.fas.fa-angle-right
+            = f.label :BookTitle, "本のタイトル"
+          = f.text_field :title, class: "bookTitle"
 
-        -# .jsonData__author
-        -#   .jsonData__author__index
-        -#     = f.label :BookAuthor, "著者"
-        -#   = f.text_field :author, class: "bookAuthor"
+        .jsonData__author
+          .jsonData__author__index
+            %i.fas.fa-angle-right
+            = f.label :BookAuthor, "著者"
+          = f.text_field :author, class: "bookAuthor"
 
-        -# .jsonData__info
-        -#   .jsonData__info__index
-        -#     = f.label :BookInfo, "本の情報"
-        -#   = f.text_field :infomation, class: "bookInfo"
+        .jsonData__info
+          .jsonData__info__index
+            %i.fas.fa-angle-right
+            = f.label :BookInfo, "本の情報"
+          = f.text_field :infomation, class: "bookInfo"
 
-        -# .jsonData__hypothesis
-        -#   .jsonData__hypothesis__index
-        -#     = f.label :hypothesis, "この本に期待すること"
-        -#   = f.text_area :content, placeholder: "何を期待しますか？", class: "bookText"
+        .jsonData__hypothesis
+          .jsonData__hypothesis__index
+            %i.fas.fa-angle-right
+            = f.label :hypothesis, "この本に期待すること"
+          = f.text_area :content, placeholder: "何を期待しますか？", class: "bookText"
 
         = f.submit "登録する", class:"submitBtn"
 
