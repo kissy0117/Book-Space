@@ -1,13 +1,15 @@
 = render 'shared/header'
 .newPost
   .form
+  
     .searchForm
-      %input.searchBooks{ type: "search", placeholder: "Favorite books", class: "search-input", id: "keyword"}
+      %input.searchBooks{ type: "search", placeholder: "Book Title", class: "search-input", id: "title"}
+      %input.searchBooks{ type: "search", placeholder: "Book Author", class: "search-input", id: "author"}
       %input.sendBtn{ type: "submit", value: "検索", class: "search-btn", id: "searchBtn"}
 
     = form_with model: @post, local: true do |f|
-      .jsonData#sampleID
-        .jsonData__image
+      .jsonData
+        .jsonData__image#sampleID
           .jsonData__image__index
             %label.BookImage
               %li.fas.fa-camera
@@ -15,21 +17,25 @@
 
         .jsonData__title
           .jsonData__title__index
+            %i.fas.fa-angle-right
             = f.label :BookTitle, "本のタイトル"
-          = f.text_field :title, class: "bookTitle"
+          = f.text_field :title, class: "bookTitle",value: ""
 
         .jsonData__author
           .jsonData__author__index
+            %i.fas.fa-angle-right
             = f.label :BookAuthor, "著者"
           = f.text_field :author, class: "bookAuthor"
 
         .jsonData__info
           .jsonData__info__index
+            %i.fas.fa-angle-right
             = f.label :BookInfo, "本の情報"
           = f.text_field :infomation, class: "bookInfo"
 
         .jsonData__hypothesis
           .jsonData__hypothesis__index
+            %i.fas.fa-angle-right
             = f.label :hypothesis, "この本に期待すること"
           = f.text_area :content, placeholder: "何を期待しますか？", class: "bookText"
 

@@ -1,31 +1,75 @@
 $(function(){
-  
+
   $('#searchBtn').on("click", function(){
-    let intitle = $("#post_title").val();
-    let inauthor = $("#post_author").val();
-    const url = "https://www.googleapis.com/books/v1/volumes?q=intitle:" + intitle + inauthor;
+    let title  = $("#title").val();
+    let author = $("#author").val();
+    const url       = `https://www.googleapis.com/books/v1/volumes?q=intitle:${title}+inauthor:${author}`;
+    const authorUrl = `https://www.googleapis.com/books/v1/volumes?q=inauthor:${author}`;
+    const titleUrl  = `https://www.googleapis.com/books/v1/volumes?q=intitle:${title}`;
+    if(title == "" && author == ""){
+      alert("検索条件を入力してください");
+    }else{
 
+      if(title == ""){
 
-    $.getJSON(url, function(){
-      console.log("実行");
-      console.log(url);
-    })
+        $.getJSON(authorUrl, function(){
+          console.log("実行");
+          console.log(authorUrl);
+        })
+        .done(function(json) {
+          $.each(json.items, function(index, item){
+          console.log(item);
+          console.log("タイトル：" + item.volumeInfo.title + "/発売日：" + item.volumeInfo.publishedDate + "/画像リンク" + item.volumeInfo.imageLinks.smallThumbnail);
+          $("#post_title").val(item.volumeInfo.title);
+          $("#post_author").val(item.volumeInfo.authors);
+          $("#post_infomation").val(item.volumeInfo.publishedDate);
+          $("#sampleID").html('<img src="' + item.volumeInfo.imageLinks.smallThumbnail + '" />')
+          })
+        })
+        .fail(function(){
+          alert('error');
+        });
 
-    .done(function(json) {
-      $.each(json.items, function(index, val){
+      }else if(author == ""){
+        
+        $.getJSON(titleUrl, function(){
+          console.log("実行");
+          console.log(titleUrl);
+        })
+        .done(function(json) {
+          $.each(json.items, function(index, item){
+          console.log(item);
+          console.log("タイトル：" + item.volumeInfo.title + "/発売日：" + item.volumeInfo.publishedDate + "/画像リンク" + item.volumeInfo.imageLinks.smallThumbnail);
+          $("#post_title").val(item.volumeInfo.title);
+          $("#post_author").val(item.volumeInfo.authors);
+          $("#post_infomation").val(item.volumeInfo.publishedDate);
+          $("#post_image").val(item.volumeInfo.imageLinks.smallThumbnail);
+          $("#sampleID").html('<img src="' + item.volumeInfo.imageLinks.smallThumbnail + '" />');
+          })
+        })
+        .fail(function(){
+          alert('error');
+        });
+      }else{
 
-      console.log(val);
-      console.log("タイトル：" + val.volumeInfo.title + "/発売日：" + val.volumeInfo.publishedDate + "/画像リンク" + val.volumeInfo.imageLinks.smallThumbnail);
-
-      $("#post_image").attr('src',val.volumeInfo.imageLinks.smallThumbnail)
-      $("#post_content").append('<br>' + index + '<br>' + 'TITLE：' + val.volumeInfo.title + '<br>' + 'INFO：' + val.volumeInfo.publishedDate + '<br>' + '<img src="' + val.volumeInfo.imageLinks.smallThumbnail + '" />');
-
-
-    })
-  })
-
-    .fail(function(){
-      alert('error');
-    });
+        $.getJSON(url, function(){
+          console.log("実行");
+          console.log(url);
+        })
+        .done(function(json) {
+          $.each(json.items, function(index, item){
+          console.log(item);
+          console.log("タイトル：" + item.volumeInfo.title + "/発売日：" + item.volumeInfo.publishedDate + "/画像リンク" + item.volumeInfo.imageLinks.smallThumbnail);
+          $("#post_title").val(item.volumeInfo.title);
+          $("#post_author").val(item.volumeInfo.authors);
+          $("#post_infomation").val(item.volumeInfo.publishedDate);
+          $("#sampleID").html('<img src="' + item.volumeInfo.imageLinks.smallThumbnail + '" />')
+          })
+        })
+        .fail(function(){
+          alert('error');
+        });
+      }
+    }
   })
 });
