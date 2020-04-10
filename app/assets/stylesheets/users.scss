@@ -1,3 +1,26 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper.users.show{
+    background-color: blue;
+    height: 100vh;
+    width: 100%;
+
+    &__section{
+      
+    
+    .wrapper-main {
+      float: right;
+
+      section{
+
+      }
+
+
+    }
+
+    .wrapper-side{
+      float: left;
+
+
+
+    }
+  }
+}

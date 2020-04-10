@@ -1,0 +1,40 @@
+= form_with model: @post, local: true do |f|
+  .jsonData
+    .jsonData__image#sampleID
+      .jsonData__image__index
+        %label.BookImage
+          %li.fas.fa-camera
+            = f.file_field :image, class: "bookImage"
+            %P
+              画像を削除する
+              = f.check_box :remove_image, class: "bookImage-remove"
+
+    .jsonData__title
+      .jsonData__title__index
+        %i.fas.fa-angle-right
+        = f.label :BookTitle, "本のタイトル"
+      = f.text_field :title, class: "bookTitle",value: ""
+
+    .jsonData__author
+      .jsonData__author__index
+        %i.fas.fa-angle-right
+        = f.label :BookAuthor, "著者"
+      = f.text_field :author, class: "bookAuthor"
+
+    .jsonData__info
+      .jsonData__info__index
+        %i.fas.fa-angle-right
+        = f.label :BookInfo, "本の情報"
+      = f.text_field :infomation, class: "bookInfo"
+
+    .jsonData__hypothesis
+      .jsonData__hypothesis__index
+        %i.fas.fa-angle-right
+        = f.label :hypothesis, "この本に期待すること"
+      = f.text_area :content, placeholder: "何を期待しますか？", class: "bookText"
+
+    = f.submit "登録する", class:"submitBtn"
+
+    .jsonData__link
+      = link_to root_path, class: "rootBtn" do
+        = "戻る"
