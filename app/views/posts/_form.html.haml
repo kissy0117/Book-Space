@@ -2,18 +2,14 @@
   .jsonData
     .jsonData__image#sampleID
       .jsonData__image__index
-        %label.BookImage
-          %li.fas.fa-camera
-            = f.file_field :image, class: "bookImage"
-            %P
-              画像を削除する
-              = f.check_box :remove_image, class: "bookImage-remove"
+    %label.BookImage
+    = f.hidden_field :image, class: "bookImage"
 
     .jsonData__title
       .jsonData__title__index
         %i.fas.fa-angle-right
         = f.label :BookTitle, "本のタイトル"
-      = f.text_field :title, class: "bookTitle",value: ""
+      = f.text_field :title, class: "bookTitle"
 
     .jsonData__author
       .jsonData__author__index

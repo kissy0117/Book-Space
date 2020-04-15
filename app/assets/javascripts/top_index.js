@@ -23,6 +23,7 @@ $(function(){
           $("#post_title").val(item.volumeInfo.title);
           $("#post_author").val(item.volumeInfo.authors);
           $("#post_infomation").val(item.volumeInfo.publishedDate);
+          $("#post_image").val(item.volumeInfo.imageLinks.smallThumbnail);
           $("#sampleID").html('<img src="' + item.volumeInfo.imageLinks.smallThumbnail + '" />')
           })
         })
@@ -63,6 +64,7 @@ $(function(){
           $("#post_title").val(item.volumeInfo.title);
           $("#post_author").val(item.volumeInfo.authors);
           $("#post_infomation").val(item.volumeInfo.publishedDate);
+          $("#post_image").val(item.volumeInfo.imageLinks.smallThumbnail);
           $("#sampleID").html('<img src="' + item.volumeInfo.imageLinks.smallThumbnail + '" />')
           })
         })

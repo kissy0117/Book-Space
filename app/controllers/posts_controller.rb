@@ -10,7 +10,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-      if @post.save
+    
+      if @post.save!
         redirect_to posts_path, notice: '保存しました'
       else
         render :new
@@ -41,7 +42,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:image, :title, :author, :infomation, :content, :remove_image).merge(user_id: current_user.id)
+    params.require(:post).permit(:image, :title, :author, :infomation, :content).merge(user_id: current_user.id)
   end
 
 end

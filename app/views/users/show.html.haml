@@ -1,20 +1,22 @@
+= render 'shared/header'
 .wrapper.users.show
-  .wrapper.users.show__section
+  .wrapper.users.show__sections
     .wrapper-main
-      %section.content__first
-        .content__first-header
-          %h2 投稿一覧
-        .content__first-contents
+      %section.first
+        %h2.first__header
+          投稿一覧
+        .first__contents
+          = @user.posts.each do |post|
+            = image_tag post.image.url
+      %section.second
+        %h2.second__header
+          読んだ本
+        .second__contents
 
-      %section.content__second
-        .content__second-header
-          %h2 読んだ本
-        .content__second-contents
-
-      %section.content__third
-        .content__third-header
-          %h2 読みたい本
-        .content__third-contents
+      %section.third
+        %h2.third__header
+          読みたい本
+        .third__contents
 
     .wrapper-side
       %section.userData
@@ -24,8 +26,8 @@
           .userData__first-image
             
         %section.userData__second
-          .userData__second-header
-            %h2 プロフィール
+          %h2.userData__second-header
+            プロフィール
           .userData__second-menu
             %ul.userData-nav
               %li 名前
