@@ -40,11 +40,11 @@ $(function(){
         .done(function(json) {
           $.each(json.items, function(index, item){
           console.log(item);
-          console.log("タイトル：" + item.volumeInfo.title + "/発売日：" + item.volumeInfo.publishedDate + "/画像リンク" + item.volumeInfo.imageLinks.smallThumbnail);
+          console.log("タイトル：" + item.volumeInfo.title + "/発売日：" + item.volumeInfo.publishedDate + "/画像リンク" + item.volumeInfo.imageLinks.smallThumbnail + '.jpg');
           $("#post_title").val(item.volumeInfo.title);
           $("#post_author").val(item.volumeInfo.authors);
           $("#post_infomation").val(item.volumeInfo.publishedDate);
-          $("#post_image").val(item.volumeInfo.imageLinks.smallThumbnail);
+          $("#post_image").val(item.volumeInfo.imageLinks.smallThumbnail + '.jpg/');
           $("#sampleID").html('<img src="' + item.volumeInfo.imageLinks.smallThumbnail + '" />');
           })
         })
