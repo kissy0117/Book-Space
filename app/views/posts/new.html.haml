@@ -1,10 +1,37 @@
 = render 'shared/header'
 .newPost
-  .form
-    .searchForm
+  .newPost__form
+    .newPost__form__search
       %input.searchBooks{ type: "search", placeholder: "Book Title", class: "search-input", id: "title"}
       %input.searchBooks{ type: "search", placeholder: "Book Author", class: "search-input", id: "author"}
       %input.sendBtn{ type: "submit", value: "検索", class: "search-btn", id: "searchBtn"}
+    .newPost__form__head
+      %h1.head
+        新しい投稿
+    .newPost__form__items
+      .newPost__form__items__image
+        = image_tag 'books_five.jpg', height: '200px', width: '200px', class: 'img'
+      .newPost__form__items__into
+        .newPost__form__items__into-title
+          %p
+            本のタイトルはこれぐらい長くても大丈夫
+        .newPost__form__items__into-author
+          %p
+            本の著者
+        .newPost__form__items__into-link
+          = link_to "#", class: "gBtn" do
+            = "Googleで詳細を見る"
+    .newPost__form__tabs
+      %ul#tabs
+        %li.tab
+          = link_to "#tab1", class: "tab1-active" do
+            = "メンタルマップ"
+        %li.tab
+          = link_to "#tab2", class: "tab2-active" do
+            = "キュリオシティ・ギャップ"
+        %li.tab
+          = link_to "#tab3", class: "tab3-active" do
+            = "削除"
     = render 'form'
 = render 'shared/footer'
 

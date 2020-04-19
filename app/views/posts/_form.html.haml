@@ -1,41 +1,30 @@
--# .jsonData__image#sampleID
--# .jsonData__image__index
--#   = form_tag('new_post_path', method: :post, :multipart => true) do
--#     = hidden_field_tag :image, accept: 'image/jpg,image/jpeg,image/png', class: "bookImage"
-
-.jsonData
-  = form_with model: @post, local: true, multipart: true do |f|
-    .jsonData__image#sampleID
-    .jsonData__image__index
-      = f.text_field :image, class: "bookImage"
-
-    .jsonData__title
-      .jsonData__title__index
-        %i.fas.fa-angle-right
-        = f.label :BookTitle, "本のタイトル"
-      = f.text_field :title, class: "bookTitle"
-
-    .jsonData__author
-      .jsonData__author__index
-        %i.fas.fa-angle-right
-        = f.label :BookAuthor, "著者"
-      = f.text_field :author, class: "bookAuthor"
-
-    .jsonData__info
-      .jsonData__info__index
-        %i.fas.fa-angle-right
-        = f.label :BookInfo, "本の情報"
-      = f.text_field :infomation, class: "bookInfo"
-
-    .jsonData__hypothesis
-      .jsonData__hypothesis__index
-        %i.fas.fa-angle-right
-        = f.label :hypothesis, "この本に期待すること"
-      = f.text_area :content, placeholder: "何を期待しますか？", class: "bookText"
-
-    = f.submit "登録する", class:"submitBtn"
-
-    .jsonData__link
-      = link_to root_path, class: "rootBtn" do
-        = "戻る"
-  
+.postArea
+  %form
+    = form_with model: @post, local: true, multipart: true do |f|
+      %table{:border=>1}
+        %tr
+          %th
+            購入日
+          %td
+            .postArea__inputDate
+              = f.date_select :purchasedate, {start_year: 2020, use_two_digit_numbers: true, date_separator: ' / '}, {class: 'time-box'}
+        %tr
+          %th
+            期待度
+          %td
+            星５段階
+        %tr
+          %th
+            なぜこの本を読もうと思ったのか
+          %td
+            = f.text_area :content, class: "textOne", size: "40x10", placeholder: "例："
+        %tr
+          %th
+            この本から何を得たいのか
+          %td
+            = f.text_area :content, class: "textTwo", size: "40x10", placeholder: "例："
+        %tr
+          %th
+            読んだ後どういう状況になりたいか
+          %td
+            = f.text_area :content, class: "textThree", size: "40x10", placeholder: "例："

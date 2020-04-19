@@ -1,0 +1,34 @@
+.postArea{
+
+  form{
+
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: #fff;
+    tr{
+
+      th{
+        padding: 25px;
+        width: 150px;
+        background-color: #e8f6f5;
+        border-bottom: 1px #cdcdcd solid;
+        text-align: left;
+        color: #656565;
+        font-size: 13px;
+        font-weight: bold;
+        white-space: nowrap;
+        td{
+          font-size: 13px;
+    padding: 25px;
+    border-bottom: 1px #cdcdcd solid;
+    width: 400px;
+        }
+      }
+    }
+  }
+
+}

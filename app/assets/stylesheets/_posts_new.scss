@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'  
+  }
+
+.newPost{
+  
+  width: 100%;
+  align-items: center;
+  display: flex;
+  &__form{
+    width: 75%;
+    margin: 20px auto;
+    text-align: center;
+
+    &__search{
+      padding-bottom: 30px;
+    }
+
+    &__head{
+      margin: 0 0 10px;
+      color: #1e1e1e;
+      font-weight: normal;
+      font-size: 34px;
+      line-height: 38px;
+      word-break: normal;
+    }
+
+    &__items{
+      position: relative;
+      margin: 0 0 20px;
+      background: #f0f0f0;
+      padding: 20px;
+      border-top: 5px #333 solid;
+      display: flex;
+      &__image{
+      }
+
+      &__into{
+        margin: 0 auto;
+        &-title{
+          font-size: 30px;
+          color: #1e1e1e;
+          margin: 0 0 10px;
+          padding: 0;
+        }
+
+        &-author{
+          font-size: 20px;
+          color: #1e1e1e;
+          margin: 0 0 10px;
+          padding: 0;
+        }
+
+        &-link{
+          .gBtn{
+            display: inline-block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            background: #668ad8;
+            color: #FFF;
+            border-radius: 4px;
+            box-shadow: 0px 0px 0px 5px #668ad8;
+            border: dashed 1px #FFF;
+            &:hover {
+              border: dotted 1px #FFF;
+            }
+          }
+        }
+      }
+    }
+    &__tabs{
+      overflow: hidden;
+      width: 100%;
+      height: 35px;
+      border-bottom: 5px #1e1e1e solid;
+      ul{
+        
+        list-style-image: none;
+        list-style-position: outside;
+        li{
+          
+          position: relative;
+          float: left;
+          margin: 0 11px 0 0;
+          height: 35px;
+          text-align: center;
+          line-height: 36px;
+          a{
+            text-decoration: none;
+            display: block;
+            padding: 0 12px 0 10px;
+            min-width: 70px;
+            border-top: 1px #cdcdcd solid;
+            border-right: 1px #cdcdcd solid;
+            border-left: 1px #cdcdcd solid;
+            background: #fff;
+            color: #555;
+          }
+          .tab{
+
+          }
+        }
+      }
+    }
+  }
+  .search-input{
+    display: inline-block;
+  }
+  .search-btn{
+    display: inline-block;
+    padding: 0px 10px;
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    &:hover {
+      background: #67c5ff;
+      color: white;
+    }
+  }
+}
