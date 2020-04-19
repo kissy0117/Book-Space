@@ -1,1 +1,34 @@
-= render 'show'
+= render 'shared/header'
+.wrapper.users.show
+  .wrapper.users.show__sections
+    .wrapper-main
+      %section.first
+        %h2.first__header
+          投稿一覧
+        .first__contents
+          = @user.posts.each do |post|
+            = image_tag post.image.url
+      %section.second
+        %h2.second__header
+          読んだ本
+        .second__contents
+
+      %section.third
+        %h2.third__header
+          読みたい本
+        .third__contents
+
+    .wrapper-side
+      %section.userData
+        %section.userData__first
+          .userData__first-name
+
+          .userData__first-image
+            
+        %section.userData__second
+          %h2.userData__second-header
+            プロフィール
+          .userData__second-menu
+            %ul.userData-nav
+              %li 名前
+              %li 好きな本

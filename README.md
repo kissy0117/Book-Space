@@ -1,24 +1,66 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# ツール・ライブラリの名前
 
-Things you may want to cover:
+読書効率向上アプリ
+[![Image from Gyazo](https://i.gyazo.com/f8fa7d10830eece297249cd00ea6f261.jpg)](https://gyazo.com/f8fa7d10830eece297249cd00ea6f261)
 
-* Ruby version
 
-* System dependencies
+# 簡単な説明
 
-* Configuration
+ユーザーは、choose a bookボタンからこれから読む本を検索し、登録することができます。
+登録する際に、本に期待することを入力します。
 
-* Database creation
 
-* Database initialization
+***デモ***
 
-* How to run the test suite
+未完成のため無。
 
-* Services (job queues, cache servers, search engines, etc.)
+# 使用技術
+## ■言語
+### バックエンド
+- Ruby 2.5.1
+### フロントエンド
+- haml/scss
+## ■フレームワーク
+- Ruby on Rails 5.2.4.1
+## ■データベース
+- MySQL 5.6.47
+## ■インフラ
+- AWS EC2
 
-* Deployment instructions
 
-* ...
+# 使い方
+
+1. テストアカウントもしくは新規ユーザー登録にて会員ログインをします。
+2. トップページ上部に出てくるchoose a bookを押します。
+3. 画面上の検索ボックスから読みたい本を選択し、登録ボタンを押します。
+
+
+# デプロイ
+
+1. Capistranoによる自動デプロイ
+
+## userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false|
+|password|String|null: false, length: {minimum: 8}|
+|image|String|null: false|
+
+### Association
+- has_many :posts
+
+## postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|String|null: false|
+|title|String|null: false|
+|author|String|null: false|
+|infomation|Integer|null: false|
+|content|Text|null: false|
+|image|Text|null: false|
+
+### Association
+- belongs_to :user

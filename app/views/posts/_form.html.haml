@@ -1,0 +1,41 @@
+-# .jsonData__image#sampleID
+-# .jsonData__image__index
+-#   = form_tag('new_post_path', method: :post, :multipart => true) do
+-#     = hidden_field_tag :image, accept: 'image/jpg,image/jpeg,image/png', class: "bookImage"
+
+.jsonData
+  = form_with model: @post, local: true, multipart: true do |f|
+    .jsonData__image#sampleID
+    .jsonData__image__index
+      = f.text_field :image, class: "bookImage"
+
+    .jsonData__title
+      .jsonData__title__index
+        %i.fas.fa-angle-right
+        = f.label :BookTitle, "本のタイトル"
+      = f.text_field :title, class: "bookTitle"
+
+    .jsonData__author
+      .jsonData__author__index
+        %i.fas.fa-angle-right
+        = f.label :BookAuthor, "著者"
+      = f.text_field :author, class: "bookAuthor"
+
+    .jsonData__info
+      .jsonData__info__index
+        %i.fas.fa-angle-right
+        = f.label :BookInfo, "本の情報"
+      = f.text_field :infomation, class: "bookInfo"
+
+    .jsonData__hypothesis
+      .jsonData__hypothesis__index
+        %i.fas.fa-angle-right
+        = f.label :hypothesis, "この本に期待すること"
+      = f.text_area :content, placeholder: "何を期待しますか？", class: "bookText"
+
+    = f.submit "登録する", class:"submitBtn"
+
+    .jsonData__link
+      = link_to root_path, class: "rootBtn" do
+        = "戻る"
+  
