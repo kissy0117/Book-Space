@@ -21,19 +21,9 @@
         .newPost__form__items__into-link
           = link_to "#", class: "gBtn" do
             = "Googleで詳細を見る"
-    .newPost__form__tabs
-      %ul#tabs
-        %li.tab
-          = link_to "#tab1", class: "tab1-active" do
-            = "メンタルマップ"
-        %li.tab
-          = link_to "#tab2", class: "tab2-active" do
-            = "キュリオシティ・ギャップ"
-        %li.tab
-          = link_to "#tab3", class: "tab3-active" do
-            = "削除"
     = render 'form'
-= render 'shared/footer'
+-# = render 'shared/footer'
+
 
 
 

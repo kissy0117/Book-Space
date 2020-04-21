@@ -1,30 +1,57 @@
-.postArea
+.postForm
   %form
     = form_with model: @post, local: true, multipart: true do |f|
-      %table{:border=>1}
-        %tr
-          %th
-            購入日
-          %td
-            .postArea__inputDate
-              = f.date_select :purchasedate, {start_year: 2020, use_two_digit_numbers: true, date_separator: ' / '}, {class: 'time-box'}
-        %tr
-          %th
-            期待度
-          %td
-            星５段階
-        %tr
-          %th
-            なぜこの本を読もうと思ったのか
-          %td
-            = f.text_area :content, class: "textOne", size: "40x10", placeholder: "例："
-        %tr
-          %th
-            この本から何を得たいのか
-          %td
-            = f.text_area :content, class: "textTwo", size: "40x10", placeholder: "例："
-        %tr
-          %th
-            読んだ後どういう状況になりたいか
-          %td
-            = f.text_area :content, class: "textThree", size: "40x10", placeholder: "例："
+      .postForm__container
+        .postForm__container__area
+          %ul.tabs
+            %li.tab
+              = link_to "#tab1", class: "tab-link active" do
+                = "メンタルマップ"
+            %li.tab
+              = link_to "#tab2", class: "tab-link" do
+                = "キュリオシティ・ギャップ"
+            %li.tab
+              = link_to "#tab3", class: "tab-link" do
+                = "削除"
+          %ul.menu
+            %li{ class: "contents show" }
+              %table{ :border=>1 }
+                %tr
+                  %th
+                    購入日
+                  %td
+                    = f.date_select :purchasedate, {start_year: 2020, use_two_digit_numbers: true, date_separator: ' / '}, {class: 'time-box'}
+                %tr
+                  %th
+                    期待度
+                  %td
+                    星５段階
+                %tr
+                  %th
+                    なぜこの本を読もうと思ったのか
+                  %td
+                    = f.text_area :why, class: "textOne", size: "40x10", placeholder: "例："
+                %tr
+                  %th
+                    この本から何を得たいのか
+                  %td
+                    = f.text_area :what, class: "textTwo", size: "40x10", placeholder: "例："
+                %tr
+                  %th
+                    読んだ後どういう状況になりたいか
+                  %td
+                    = f.text_area :how, class: "textThree", size: "40x10", placeholder: "例："
+          %ul.menu
+            %li{ class: "contents" }
+              %table{ :border=>1 }
+                %tr
+                  %th
+                    著者の写真
+                  %td
+                    = f.file_field :authorImg, class: "img"
+                %tr
+                  %th
+                    今までの著作はどんなジャンル？
+                  %td
+                    = f.text_area :authorText, class: "text", size: "40x5"
+      
