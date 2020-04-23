@@ -1,59 +1,97 @@
-.wrapper.users.show{
+*{
+  box-sizing: border-box;
+}
 
-
-    &__sections{
-      width: 1004px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
-    .wrapper-main {
-      float: right;
-      width: 684px;
-      background-color: whitesmoke;
-      .first{
-
-        &__header{
-          height: 30px;
-          border-bottom: solid black;
+.userWrapper{
+  padding: 50px 200px;
+  background: whitesmoke;
+  &__contents{
+    &__main{
+      display: flex;
+      background: white;
+      border-bottom: solid 1px black;
+      &__icon{
+        height: 300px;
+        width: 200px;
+        &__image{
+          padding: 10px;
+          .user-img{
+            border-radius: 50%;
+          }
         }
-
-        &__contents{
-
+        &__name{
+          text-align: center;
+          p{
+            font-size: 20px;
+          }
         }
-
       }
-
-      .second{
-
-        &__header{
-
+      &__info{
+        height: 300px;
+        width: 100%;
+        &__nav{
+          padding: 0 50px;
+          text-align: center;
+          &__name{
+            padding-top: 20px;
+            h2{
+              font-size: 50px;
+              color: #00BCD4;
+            }
+          }
+          &__activity{
+            margin-top: 80px;
+            ul{
+              display: flex;
+              justify-content: center;
+              li{
+                padding-right: 20px;
+              }
+            }
+          }
         }
-
-        &__contents{
-
-        }
-
       }
-
-      .third{
-
-        &__header{
-
-        }
-
-        &__contents{
-
-        }
-
-      }
-
-
     }
-
-    .wrapper-side{
-      float: left;
-      width: 300px;
-      background-color: wheat;
+    &__navArea{
+      background: white;
+      height: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 100px;
+      &__user-menu{
+        ul{
+          display: flex;
+          padding-top: 40px;
+          li{
+            padding-right: 20px;
+            color: #00BCD4;
+            i{
+              font-weight: bold;
+              color: #646464;
+            }
+          }
+        }
+      }
+      &__user-buttons{
+        ul{
+          display: flex;
+          padding-top: 40px;
+          li{
+            padding-right: 20px;
+            font-weight: bold;
+            .twitter-icon{
+              color: #22b8ff;
+            }
+            .facebook-icon{
+              color: #6680d8;
+            }
+            a{
+              text-decoration: none;
+            }
+          }
+        }
+      }
     }
   }
 }

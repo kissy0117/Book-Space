@@ -1,34 +1,49 @@
 = render 'shared/header'
-.wrapper.users.show
-  .wrapper.users.show__sections
-    .wrapper-main
-      %section.first
-        %h2.first__header
-          投稿一覧
-        .first__contents
-          = @user.posts.each do |post|
-            = image_tag post.image.url
-      %section.second
-        %h2.second__header
-          読んだ本
-        .second__contents
-
-      %section.third
-        %h2.third__header
-          読みたい本
-        .third__contents
-
-    .wrapper-side
-      %section.userData
-        %section.userData__first
-          .userData__first-name
-
-          .userData__first-image
-            
-        %section.userData__second
-          %h2.userData__second-header
+.userWrapper
+  .userWrapper__contents
+    .userWrapper__contents__main
+      .userWrapper__contents__main__icon
+        .userWrapper__contents__main__icon__image
+          = image_tag current_user.image.url, height: '150px', width: '150px', class: 'user-img'
+        .userWrapper__contents__main__icon__name
+          %p
+            = current_user.name
+      .userWrapper__contents__main__info
+        .userWrapper__contents__main__info__nav
+          .userWrapper__contents__main__info__nav__name
+            %h2
+              =current_user.name
+              さんのページ
+          .userWrapper__contents__main__info__nav__activity
+            %ul.menu
+              %li
+                完了したタスク
+              %li
+                未完了のタスク
+              %li
+                これから取り組むタスク
+    .userWrapper__contents__navArea
+      .userWrapper__contents__navArea__user-menu
+        %ul
+          %li
+            %i.fas.fa-book-open
+            本棚
+          %li
+            %i.fas.fa-user-circle
             プロフィール
-          .userData__second-menu
-            %ul.userData-nav
-              %li 名前
-              %li 好きな本
+          %li
+            %i.fas.fa-clock
+            タイムライン
+      .userWrapper__contents__navArea__user-buttons
+        %ul
+          %li
+            = link_to "#", class: "twitter-icon" do
+              %i.fab.fa-twitter
+              %span
+                Follow Me
+          %li
+            = link_to "#", class: "facebook-icon" do
+              %i.fab.fa-facebook
+              %span
+                Follow Me
+  .userWrapper__posts
