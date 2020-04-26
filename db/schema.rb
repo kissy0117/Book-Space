@@ -13,12 +13,15 @@
 ActiveRecord::Schema.define(version: 2020_02_23_055907) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "purchase_date", null: false
     t.integer "user_id", null: false
     t.string "title", null: false
     t.string "author", null: false
-    t.integer "infomation", null: false
-    t.text "content", null: false
-    t.text "image", null: false
+    t.string "image"
+    t.text "why_read", null: false
+    t.text "what_info", null: false
+    t.text "to_be", null: false
+    t.text "author_genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
