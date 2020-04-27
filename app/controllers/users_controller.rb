@@ -14,18 +14,20 @@ class UsersController < ApplicationController
   end
 
   def edit
+    # binding.pry
     @user = User.find(params[:id])
   end
 
   def update
     @user = User.find(params[:id])
+    @user.remove_image!
+    @user.save!
 
-    if current_user.update(user_params)
-      redirect_to root_path
+    if @user.update(user_params)
+      redirect_to root_path, notice: '更新しました'
     else
       render :edit
     end
-
   end
 
   private
