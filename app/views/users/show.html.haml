@@ -5,6 +5,8 @@
       .userWrapper__contents__main__icon
         .userWrapper__contents__main__icon__image
           = image_tag current_user.image.url, height: '150px', width: '150px', class: 'user-img'
+          = link_to edit_user_path(@user.id), class: "edit-img" do
+            = "編集"
         .userWrapper__contents__main__icon__name
           %p
             = current_user.name
@@ -47,3 +49,5 @@
               %span
                 Follow Me
   .userWrapper__posts
+    - @posts.each do |post|
+      = image_tag post.image.url, height: '100px', width: '100px', class: 'img'

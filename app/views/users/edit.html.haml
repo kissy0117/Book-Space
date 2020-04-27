@@ -1,21 +1,29 @@
-#account-page.account-page
-  .account-page__inner.clearfix
-    .account-page__inner--left.account-page__header
-      %h2 Edit Account
-      %h5 アカウントの編集
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
-      = link_to "トップページに戻る", :back, class: 'btn'
-    .account-page__inner--right.user-form
-      = form_for(current_user) do |f|
-        .field
-          .field-label
-            = f.label :name
-          .field-input
-            = f.text_field :name, autofocus: true
-        .field
-          .field-label
-            = f.label :email
-          .field-input
-            = f.email_field :email
-        .actions
-          = f.submit "Update", class: 'btn'
+= render 'shared/header'
+.editWrapper
+  .editWrapper__area
+    .editWrapper__area__head
+      %h1 プロフィール画像の編集
+    .editWrapper__area__middle
+      %form
+        = form_with(model: @user, local: true, multipart: true ) do |f|
+          %table{ :border=>1 }
+            %tr
+              %th
+                プロフィール画像
+              %td
+
+                - if @user.persisted? && @user.image?
+                  = image_tag @user.image.url, height: '200px', width: '200px', id: 'img_prev'
+                  = f.file_field :image, class:"editWrapper-img", id: 'post_img'
+                  %label
+                    画像を削除
+                    = f.check_box :remove_image
+
+
+                - else
+                  = image_tag 0.jpg, height: '200px', width: '200px', id: 'img_prev'
+                  = f.hidden_field :image_cache
+          %p
+            = f.submit value: "更新する", class: "editWrapper-btn"
+= render 'shared/footer'
+

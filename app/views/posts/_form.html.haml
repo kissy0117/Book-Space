@@ -1,26 +1,25 @@
 .postForm
-  %form
-    = form_with model: @post, local: true, multipart: true do |f|
-      .postForm__container
-        .postForm__container__area
-          %ul.tabs
-            %li.tab
-              = link_to "#tab1", class: "tab-link active" do
-                = "メンタルマップ"
-            %li.tab
-              = link_to "#tab2", class: "tab-link" do
-                = "キュリオシティ・ギャップ"
-            %li.tab
-              = link_to "#tab3", class: "tab-link" do
-                = "削除"
-          %ul.menu
+  .postForm__container
+    .postForm__container__area
+      %ul.tabs
+        %li.tab
+          = link_to "#tab1", class: "tab-link active" do
+            = "メンタルマップ"
+        %li.tab
+          = link_to "#tab2", class: "tab-link" do
+            = "キュリオシティ・ギャップ"
+        %li.tab
+          = link_to "#tab3", class: "tab-link" do
+            = "削除"
+        %ul.menu
+          = form_with( model: @post, local: true ) do |f|
             %li{ class: "contents show" }
               %table{ :border=>1 }
                 %tr
                   %th
                     購入日
                   %td
-                    = f.date_select :purchasedate, {start_year: 2020, use_two_digit_numbers: true, date_separator: ' / '}, {class: 'time-box'}
+                    = f.date_select :purchase_date, {start_year: 2020, use_two_digit_numbers: true, date_separator: ' / '}, {class: 'time-box'}
                 %tr
                   %th
                     期待度
@@ -28,30 +27,39 @@
                     星５段階
                 %tr
                   %th
+                    本のタイトル
+                  %td
+                    = f.text_field :title, class: "book-titile", size: "30", placeholder: "自動入力"
+                %tr
+                  %th
+                    本の著者
+                  %td
+                    = f.text_field :author, class: "book-author", size: "30", placeholder: "自動入力"
+                %tr
+                  %th
                     なぜこの本を読もうと思ったのか
                   %td
-                    = f.text_area :why, class: "textOne", size: "40x10", placeholder: "例："
+                    = f.text_area :why_read, class: "textOne", size: "40x10", placeholder: "例：クリスマスまでに彼女が欲しいから"
                 %tr
                   %th
                     この本から何を得たいのか
                   %td
-                    = f.text_area :what, class: "textTwo", size: "40x10", placeholder: "例："
+                    = f.text_area :what_info, class: "textTwo", size: "40x10", placeholder: "例：気になっている子を自然にデートに誘う方法を知りたい"
                 %tr
                   %th
-                    読んだ後どういう状況になりたいか
+                    読んだ後どういう状態になりたいか
                   %td
-                    = f.text_area :how, class: "textThree", size: "40x10", placeholder: "例："
-          %ul.menu
+                    = f.text_area :to_be, class: "textThree", size: "40x10", placeholder: "例：誘い文句を３つぐらいストックできている状態になりたい"
             %li{ class: "contents" }
               %table{ :border=>1 }
                 %tr
                   %th
                     著者の写真
                   %td
-                    = f.file_field :authorImg, class: "img"
+                    = f.file_field :image, class: "img", placeholder: "著者の写真を投稿しよう"
                 %tr
                   %th
-                    今までの著作はどんなジャンル？
+                    この著者は過去にどんな本を書いているのか
                   %td
-                    = f.text_area :authorText, class: "text", size: "40x5"
-      
+                    = f.text_area :author_genre, class: "text", size: "40x5", placeholder: "知識を操る超読書術"
+              = f.submit value: "登録する"
