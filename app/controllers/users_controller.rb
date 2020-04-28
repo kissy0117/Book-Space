@@ -1,30 +1,19 @@
 class UsersController < ApplicationController
 
-  def index
-  end
-
 
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.order("created_at DESC").page(params[:page]).per(2)
   end
 
-  def new
-    @user = User.new
-  end
-
   def edit
-    # binding.pry
     @user = User.find(params[:id])
   end
 
   def update
     @user = User.find(params[:id])
-    @user.remove_image!
-    @user.save!
-
     if @user.update(user_params)
-      redirect_to root_path, notice: '更新しました'
+      redirect_to user_path, notice: '更新しました'
     else
       render :edit
     end
@@ -33,7 +22,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:image, :remove_image, :image_cache)
+    params.require(:user).permit(:image, :image_cache)
   end
 
 end

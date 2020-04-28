@@ -49,5 +49,12 @@
               %span
                 Follow Me
   .userWrapper__posts
-    - @posts.each do |post|
-      = image_tag post.image.url, height: '100px', width: '100px', class: 'img'
+    .userWrapper__posts__box
+      %h2.title
+        = current_user.name
+        さんの投稿一覧
+      .userWrapper__posts__box__books
+        - @posts.each do |post|
+          .userWrapper__posts__box__books__list
+            = link_to post_path(post.id), class: "link" do
+              = image_tag post.image.url, height: '250px', width: '200px', class: 'img'

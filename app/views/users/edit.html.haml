@@ -4,26 +4,22 @@
     .editWrapper__area__head
       %h1 プロフィール画像の編集
     .editWrapper__area__middle
-      %form
-        = form_with(model: @user, local: true, multipart: true ) do |f|
-          %table{ :border=>1 }
-            %tr
-              %th
-                プロフィール画像
-              %td
+      = form_for(current_user) do |f|
+        %table{ :border=>1 }
+          %tr
+            %th
+              プロフィール画像
+            %td
 
-                - if @user.persisted? && @user.image?
-                  = image_tag @user.image.url, height: '200px', width: '200px', id: 'img_prev'
-                  = f.file_field :image, class:"editWrapper-img", id: 'post_img'
-                  %label
-                    画像を削除
-                    = f.check_box :remove_image
+              - if current_user.persisted? && current_user.image?
+                = image_tag current_user.image.url, height: '200px', width: '200px', id: 'img_prev'
+                = f.file_field :image, class:"editWrapper-img", id: 'post_img'
 
 
-                - else
-                  = image_tag 0.jpg, height: '200px', width: '200px', id: 'img_prev'
-                  = f.hidden_field :image_cache
-          %p
-            = f.submit value: "更新する", class: "editWrapper-btn"
+              - else
+                = image_tag 0.jpg, height: '200px', width: '200px', id: 'img_prev'
+                = f.hidden_field :image_cache
+        %p
+          = f.submit value: "更新する", class: "editWrapper-btn"
 = render 'shared/footer'
 

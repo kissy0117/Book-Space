@@ -7,7 +7,6 @@ a{
 }
 
 .userWrapper{
-  height: 100vh;
   width: 100%;
   padding: 50px 200px;
   background: whitesmoke;
@@ -108,6 +107,27 @@ a{
             a{
               text-decoration: none;
             }
+          }
+        }
+      }
+    }
+  }
+  &__posts{
+    margin: 20px 0 10px;
+    &__box{
+      h2{
+        width: 100%;
+        border-bottom: 5px #333 solid;
+        padding: 0 0 4px;
+        margin: 0 0 15px;
+        font-size: 30px;
+      }
+      &__books{
+        display: flex;
+        &__list{
+          margin-right: 10px;
+          .img{
+            border: 2px #22b8ff solid;
           }
         }
       }

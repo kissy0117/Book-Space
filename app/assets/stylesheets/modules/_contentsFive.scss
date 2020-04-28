@@ -1,0 +1,57 @@
+.wrapperFive{
+  padding: 40px 10%;
+  text-align: center;
+  &__head{
+    margin-bottom: 40px;
+    .title{
+      font-size: 28px;
+      font-weight: 600;
+      i{
+
+      }
+    }
+  }
+  &__testLists{
+    width: 1170px;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    text-align: left;
+    &__group{
+      margin-bottom: 20px;
+      &__panel{
+        margin-bottom: 0;
+        border-radius: 4px;
+        &__task{
+          .question{
+            padding: 20px 20px;
+            background-color: #fff !important;
+            color: #000000 !important;
+            border: 1px solid #e5e5e5 !important;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 20px;
+            font-weight: 600;
+            color: inherit;
+            cursor: pointer;
+            &:hover{
+              text-decoration: underline;
+            }
+            i{
+              color: #016ea9;
+            }
+          }
+          .answer{
+            display: none;
+            border: none !important;
+            background-color: #fff;
+            padding: 20px;
+            margin: 0 0 10px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
