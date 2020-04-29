@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :author, :purchase_date, :why_read, :what_info, :to_be, :image, :author_genre).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :author, :purchase_date, :book_image, :why_read, :what_info, :to_be, :image, :author_genre).merge(user_id: current_user.id)
   end
 
 end

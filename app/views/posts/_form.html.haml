@@ -22,9 +22,11 @@
                     = f.date_select :purchase_date, {start_year: 2020, use_two_digit_numbers: true, date_separator: ' / '}, {class: 'time-box'}
                 %tr
                   %th
-                    期待度
+                    本のURL
                   %td
-                    星５段階
+                    .newPost__form__items__image#img-prev
+                      = image_tag 'books_five.jpg', height: '200px', width: '200px', class: 'img', id: "img-prev"
+                    = f.hidden_field :book_image, class: "book-image", id: "bookImg"
                 %tr
                   %th
                     本のタイトル
@@ -62,4 +64,5 @@
                     この著者は過去にどんな本を書いているのか
                   %td
                     = f.text_area :author_genre, class: "text", size: "40x5", placeholder: "知識を操る超読書術"
-              = f.submit value: "登録する"
+              = f.submit value: "投稿する", class: "btn"
+-# = render 'shared/footer'

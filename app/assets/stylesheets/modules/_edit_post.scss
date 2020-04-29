@@ -1,0 +1,27 @@
+.editWrapper{
+  padding: 0 60px;
+  width: 100%;
+  border-top: 1px solid #eee;
+  position: relative;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);  
+  &__header{
+    display: flex;
+    padding: 17px 0 16px;
+    font-size: 14px;
+    max-width: 1040px;
+    margin: 0 auto;
+    &__title{
+      display: flex;
+      i{
+        font-size: 20px;
+        padding-top: 5px;
+        font-weight: 100;
+      }
+      h2{
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+

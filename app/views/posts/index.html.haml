@@ -4,20 +4,20 @@
     .containerBooks__left
       .containerBooks__left__image
         = link_to post_path(post.id), class: "#" do
-          = image_tag post.image.url, alt: '本の写真', height: '100%', width: '100%', class: 'book-image'
+          = image_tag post.book_image, alt: '本の写真', height: '100%', width: '100%', class: 'book-image'
     .containerBooks__right
       .containerBooks__right__contents
         %h2.title
           = post.title
-        %p.author
-          Author:
-          = post.author
         %p.info
-          Infomation:
-          
+          Why:
+          = post.why_read
         %p.review
-          Review:
-          
+          What:
+          = post.what_info
+        %p.author
+          To_be:
+          = post.to_be
       .containerBooks__right__picker
         .containerBooks__right__picker-image
           = image_tag post.user.image.url, alt: '顔写真', height: '100px', width: '100px', class: 'picker-image'

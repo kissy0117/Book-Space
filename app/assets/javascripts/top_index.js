@@ -6,6 +6,10 @@ $(function(){
     const url       = `https://www.googleapis.com/books/v1/volumes?q=intitle:${title}+inauthor:${author}`;
     const authorUrl = `https://www.googleapis.com/books/v1/volumes?q=inauthor:${author}`;
     const titleUrl  = `https://www.googleapis.com/books/v1/volumes?q=intitle:${title}`;
+
+
+
+
     if(title == "" && author == ""){
       alert("検索条件を入力してください");
     }else{
@@ -22,9 +26,9 @@ $(function(){
           console.log("タイトル：" + item.volumeInfo.title + "/発売日：" + item.volumeInfo.publishedDate + "/画像リンク" + item.volumeInfo.imageLinks.smallThumbnail);
           $("#post_title").val(item.volumeInfo.title);
           $("#post_author").val(item.volumeInfo.authors);
-          $("#post_infomation").val(item.volumeInfo.publishedDate);
-          $("#post_image").val(item.volumeInfo.imageLinks.smallThumbnail);
-          $("#sampleID").html('<img src="' + item.volumeInfo.imageLinks.smallThumbnail + '" />')
+          $("#bookImg").val(item.volumeInfo.imageLinks.smallThumbnail);
+          $("#img-prev").html('<img src="' + item.volumeInfo.imageLinks.smallThumbnail + '" />')
+          
           })
         })
         .fail(function(){
@@ -43,9 +47,8 @@ $(function(){
           console.log("タイトル：" + item.volumeInfo.title + "/発売日：" + item.volumeInfo.publishedDate + "/画像リンク" + item.volumeInfo.imageLinks.smallThumbnail + '.jpg');
           $("#post_title").val(item.volumeInfo.title);
           $("#post_author").val(item.volumeInfo.authors);
-          $("#post_infomation").val(item.volumeInfo.publishedDate);
-          $("#post_image").val(item.volumeInfo.imageLinks.smallThumbnail + '.jpg/');
-          $("#sampleID").html('<img src="' + item.volumeInfo.imageLinks.smallThumbnail + '" />');
+          $("#bookImg").val(item.volumeInfo.imageLinks.smallThumbnail);
+          $("#img-prev").html('<img src="' + item.volumeInfo.imageLinks.smallThumbnail + '" />')
           })
         })
         .fail(function(){
@@ -63,9 +66,8 @@ $(function(){
           console.log("タイトル：" + item.volumeInfo.title + "/発売日：" + item.volumeInfo.publishedDate + "/画像リンク" + item.volumeInfo.imageLinks.smallThumbnail);
           $("#post_title").val(item.volumeInfo.title);
           $("#post_author").val(item.volumeInfo.authors);
-          $("#post_infomation").val(item.volumeInfo.publishedDate);
-          $("#post_image").val(item.volumeInfo.imageLinks.smallThumbnail);
-          $("#sampleID").html('<img src="' + item.volumeInfo.imageLinks.smallThumbnail + '" />')
+          $("#bookImg").val(item.volumeInfo.imageLinks.smallThumbnail);
+          $("#img-prev").html('<img src="' + item.volumeInfo.imageLinks.smallThumbnail + '" />')
           })
         })
         .fail(function(){

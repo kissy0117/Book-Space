@@ -30,6 +30,8 @@
             = f.password_field :password_confirmation, autocomplete: "off"
         .field
           .field-label
+            %i アイコン設定
+          .field-input
             = f.file_field :image
         .actions
           = f.submit "Create Account", class: 'btn'

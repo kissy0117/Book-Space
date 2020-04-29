@@ -17,7 +17,8 @@ ActiveRecord::Schema.define(version: 2020_02_23_055907) do
     t.integer "user_id", null: false
     t.string "title", null: false
     t.string "author", null: false
-    t.string "image"
+    t.string "image", null: false
+    t.text "book_image", null: false
     t.text "why_read", null: false
     t.text "what_info", null: false
     t.text "to_be", null: false
