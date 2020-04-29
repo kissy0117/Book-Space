@@ -9,20 +9,14 @@
       %h1.head
         新しい投稿
     .newPost__form__items
-      .newPost__form__items__image
-        = image_tag 'books_five.jpg', height: '200px', width: '200px', class: 'img'
+      .newPost__form__items__image#img-prev
+        = image_tag 'books_five.jpg', height: '200px', width: '200px', class: 'img', id: "img-prev"
       .newPost__form__items__into
-        .newPost__form__items__into-title
-          %p
-            本のタイトルはこれぐらい長くても大丈夫
-        .newPost__form__items__into-author
-          %p
-            本の著者
         .newPost__form__items__into-link
-          = link_to "#", class: "gBtn" do
+          = link_to "https://www.google.com/search?tbm=bks&q=#{@post.title}", class: "gBtn" do
             = "Googleで詳細を見る"
     = render 'form'
--# = render 'shared/footer'
+
 
 
 

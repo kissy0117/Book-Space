@@ -1,4 +1,14 @@
+= render 'shared/header'
+.editWrapper
+  .editWrapper__header
+    .editWrapper__header__title
+      %i.fas.fa-edit
+      %h2 編集ページ
 .newPost
-  .form
+  .newPost__form
+    .newPost__form__search
+      %input.searchBooks{ type: "search", placeholder: "Book Title", class: "search-input", id: "title"}
+      %input.searchBooks{ type: "search", placeholder: "Book Author", class: "search-input", id: "author"}
+      %input.sendBtn{ type: "submit", value: "検索", class: "search-btn", id: "searchBtn"}
     = render 'form'
-= render 'shared/footer'
+-# = render 'shared/footer'

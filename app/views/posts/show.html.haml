@@ -13,7 +13,7 @@
       .postBox__inner__detail--title
         = @post.title
       .postBox__inner__detail--image
-        = image_tag @post.image.url, class: "detail-image"
+        = image_tag @post.book_image, height: '300px', width: '250px',class: "detail-image"
       .postBox__inner__detail--table
         %table
           %tbody
@@ -34,13 +34,23 @@
                 = @post.author
             %tr
               %th
-                本の情報
+                なぜ読むか
               %td
-                -# = @post.infomation
+                = @post.why_read
             %tr
               %th
-                投稿日時
+                何を得たいのか
               %td
-                = @post.created_at
+                = @post.what_info
+            %tr
+              %th
+                どうなりたいのか
+              %td
+                = @post.to_be
+            %tr
+              %th
+                購入日
+              %td
+                = @post.purchase_date
 = render "shared/contentsSix"
 = render "shared/footer"
