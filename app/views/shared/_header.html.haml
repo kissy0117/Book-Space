@@ -8,10 +8,6 @@
         = link_to posts_path, class: "posts-index" do
           %i.far.fa-address-card
     - if user_signed_in?
-      .header__menu__center
-        %li
-          = link_to new_post_path, class: "search-btn" do
-            = "さっそくはじめよう！"
       .header__menu__right-signedIn
         %ul.lists
           %li
