@@ -22,10 +22,10 @@
                     = f.date_select :purchase_date, {start_year: 2020, use_two_digit_numbers: true, date_separator: ' / '}, {class: 'time-box'}
                 %tr
                   %th
-                    本のURL
+                    本の画像
                   %td
                     .newPost__form__items__image#img-prev
-                      = image_tag 'books_five.jpg', height: '200px', width: '200px', class: 'img', id: "img-prev"
+                      = image_tag 'default.png', height: '200px', width: '200px', class: 'img', id: "img-prev"
                     = f.hidden_field :book_image, class: "book-image", id: "bookImg"
                 %tr
                   %th

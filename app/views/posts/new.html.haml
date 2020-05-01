@@ -10,7 +10,7 @@
         新しい投稿
     .newPost__form__items
       .newPost__form__items__image#img-prev
-        = image_tag 'books_five.jpg', height: '200px', width: '200px', class: 'img', id: "img-prev"
+        = image_tag 'default.png', alt: "検索書籍", height: '200px', width: '200px', class: 'img', id: "img-prev"
       .newPost__form__items__into
         .newPost__form__items__into-link
           = link_to "https://www.google.com/search?tbm=bks&q=#{@post.title}", class: "gBtn" do
