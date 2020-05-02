@@ -27,6 +27,7 @@ body {
       font-size: 34px;
       line-height: 38px;
       word-break: normal;
+      text-align: left;
     }
 
     &__items{
@@ -56,6 +57,9 @@ body {
         }
 
         &-link{
+          display: flex;
+          justify-content: center;
+          padding-top: 70px;
           .gBtn{
             display: inline-block;
             padding: 0.5em 1em;
