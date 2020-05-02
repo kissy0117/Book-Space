@@ -2,8 +2,7 @@
 
 # ツール・ライブラリの名前
 読書効率向上アプリ(IRM)
-[![Image from Gyazo](https://i.gyazo.com/f8fa7d10830eece297249cd00ea6f261.jpg)](https://gyazo.com/f8fa7d10830eece297249cd00ea6f261)
-
+[![Image from Gyazo](https://i.gyazo.com/37cc4bbfa2fdbfecf78752619167769c.jpg)](https://gyazo.com/37cc4bbfa2fdbfecf78752619167769c)
 # なぜ作ったか
 実体験として、自己啓発本などを読み終わった後、内容を忘れてしまっていたり、行動に移せない時がありました。原因として、なんとなく本を選んでいたり、アウトプットが足りていないからだと考え、それを改善する為にアプリを作りました。
 
@@ -13,7 +12,8 @@
 # アプリの機能・技術一覧
 - devise(ユーザーログイン・ログアウト機能)
 - carrierwave(ユーザーアイコン投稿機能)
-- 記事投稿機能(Google books API)
+- 記事投稿機能
+- Google books API
 - pagination(kaminari)
 - バックエンド
   - Ruby 2.5.1
@@ -30,8 +30,8 @@
 
 
 # テストアカウント
-Eメール : gest@gmail.com
-パスワード : aaaaaaaa
+- Eメール : gest@gmail.com
+- パスワード : aaaaaaaa
 
 # 使い方
 1. テストアカウントもしくは新規ユーザー登録にて会員ログインをします。
