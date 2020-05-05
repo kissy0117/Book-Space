@@ -1,10 +1,20 @@
 require 'rails_helper'
-describe User do
-  describe '#create' do
-    it "nameがない場合は登録できないこと" do
-      user = User.new( email: "test@lookout", name: "", image: "qqq")
+
+RSpec.describe User, type: :model do
+
+    it "emailがない場合は登録できないこと" do
+
+    user = User.new(
+      id: "1",
+      name: "俺",
+      image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/picker.jpg')),
+      email: "",
+      password: "qqqqqqqq",
+      created_at: "2020-05-04",
+      updated_at: "2020-05-04")
+
       user.valid?
-      expect(user.errors[:name]).to include("can't be blank")
-    end
+      
+      expect(user.errors[:email]).to include("can't be blank")
   end
 end
