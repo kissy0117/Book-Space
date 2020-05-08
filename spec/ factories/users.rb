@@ -1,10 +1,13 @@
-# FactoryBot.define do
+FactoryBot.define do
 
-#   factory :user do
-#     email                   {"test@gmail.com"}
-#     encrypted_password      {"00000000"}
-#     name                    {"abe"}
-#     image                   {"books_two.jpg"}
-#   end
+  factory :user do
+    id            {"1"}
+    name          {"あああ"}
+    image         {Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/picker.jpg'))}
+    email         {"test@gmail.com"}
+    password      {"qqqqqqqq"}
+    created_at    {"2020-05-08"}
+    updated_at    {"2020-05-08"}
+  end
 
-# end
+end
