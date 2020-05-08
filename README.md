@@ -1,7 +1,11 @@
 # README
-
 # ツール・ライブラリの名前
 ## 読書効率向上アプリ(IRM)
+### URL
+- http://18.180.96.173/
+### テストアカウント
+- Eメール : gest@gmail.com
+- パスワード : aaaaaaaa
 [![Image from Gyazo](https://i.gyazo.com/37cc4bbfa2fdbfecf78752619167769c.jpg)](https://gyazo.com/37cc4bbfa2fdbfecf78752619167769c)
 # なぜ作ったか
 実体験として、自己啓発本などを読み終わった後、内容を忘れてしまっていたり、行動に移せない時がありました。原因として、なんとなく本を選んでいたり、アウトプットが足りていないからだと考え、それを改善する為にアプリを作りました。
@@ -15,12 +19,12 @@
 - 記事投稿機能
 - Google books API
 - pagination(kaminari)
+- フロントエンド
+  - haml/scss/jQuery
 - バックエンド
   - Ruby 2.5.1
 - フレームワーク
   - Ruby on Rails 5.2.4.1
-- フロントエンド
-  - haml/scss/jQuery
 - データベース
   - MySQL 5.6.47
 - テスト
@@ -30,11 +34,6 @@
   - AWS EC2
 - デプロイ
   - Capistranoによる自動デプロイ
-
-
-# テストアカウント
-- Eメール : gest@gmail.com
-- パスワード : aaaaaaaa
 
 # 使い方
 1. テストアカウントもしくは新規ユーザー登録にて会員ログインをします。
