@@ -23,6 +23,9 @@
   - haml/scss/jQuery
 - データベース
   - MySQL 5.6.47
+- テスト
+  - rspec-rails
+  - factory_bot_rails
 - インフラ
   - AWS EC2
 - デプロイ
